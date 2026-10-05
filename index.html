@@ -1,0 +1,19 @@
+<!doctype html><html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>사람인 공고 컨펌 - 뷰티블라썸의원 (한국어)</title>
+<style>
+*{box-sizing:border-box}body{margin:0;background:#1b1b1f;color:#eee;font-family:'Pretendard','Noto Sans KR',system-ui,sans-serif}
+header{padding:22px 16px 8px;text-align:center}header h1{margin:0;font-size:19px}header p{margin:6px 0 0;color:#9a9aa5;font-size:13px}
+nav{position:sticky;top:0;z-index:10;background:#1b1b1fee;backdrop-filter:blur(8px);display:flex;gap:8px;justify-content:center;padding:10px;border-bottom:1px solid #2e2e35}
+nav button{border:1px solid #3a3a43;background:#25252b;color:#d0d0d8;padding:9px 18px;border-radius:999px;font-size:15px;cursor:pointer}
+nav button.on{background:#fff;color:#111;border-color:#fff;font-weight:700}
+main{max-width:860px;margin:0 auto;padding:14px 0 60px}.pg{background:#fff;line-height:0}.pg img{width:100%;display:block}
+</style></head><body>
+<header><h1>뷰티블라썸의원 사람인 공고 - 외국어(영어/대만/중국/홍콩/일본/태국)</h1><p>한국어 버전 3종 · 탭을 눌러 전환</p></header>
+<nav id="t"></nav><main><div class="pg"><img id="im" alt=""></div></main>
+<script>
+const P=[['coordinator','코디네이터'],['marketer','마케터'],['manager','상담실장']];
+const nav=document.getElementById('t'),im=document.getElementById('im');
+function show(k){const p=P.find(x=>x[0]===k)||P[0];[...nav.children].forEach(b=>b.classList.toggle('on',b.dataset.k===p[0]));im.src=p[0]+'.jpg';history.replaceState(null,'','#'+p[0]);window.scrollTo({top:0});}
+P.forEach(p=>{const b=document.createElement('button');b.dataset.k=p[0];b.textContent=p[1];b.onclick=()=>show(p[0]);nav.appendChild(b)});
+show(location.hash.slice(1)||'coordinator');
+</script></body></html>
